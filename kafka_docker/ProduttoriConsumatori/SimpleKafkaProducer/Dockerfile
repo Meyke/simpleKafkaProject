@@ -1,3 +1,3 @@
 FROM java:8
-ADD SimpleKafkaProducer.jar SimpleProducer.jar
+ADD SimpleKafkaProducer-all.jar SimpleProducer.jar
 CMD ["java","-jar","SimpleProducer.jar"]

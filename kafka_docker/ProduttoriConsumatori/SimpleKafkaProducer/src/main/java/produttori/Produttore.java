@@ -15,7 +15,7 @@ public class Produttore {
 			 
 	        //properties for producer
 	        Properties props = new Properties();
-	        props.put("bootstrap.servers", "localhost:9092");
+	        props.put("bootstrap.servers", "kafka1:9092");
 	        props.put("key.serializer", "org.apache.kafka.common.serialization.IntegerSerializer");
 	        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 	 

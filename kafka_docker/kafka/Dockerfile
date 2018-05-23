@@ -16,5 +16,5 @@ RUN wget http://it.apache.contactlab.it/kafka/1.1.0/kafka_2.11-1.1.0.tgz  && \
   	mv kafka_2.11-1.1.0 $KAFKA_HOME
 
 
-EXPOSE 92
+EXPOSE 9092
 CMD ["/scripts/kafka-configuration.sh"]

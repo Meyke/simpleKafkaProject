@@ -11,7 +11,7 @@ public class Consumatore {
 	
 	public static void main(String[] args) {
 		 Properties props = new Properties();
-	        props.put("bootstrap.servers", "localhost:9092");
+	        props.put("bootstrap.servers", "kafka1:9092");
 	        props.put("group.id", "triciclo");
 	        
 	        //using auto commit
