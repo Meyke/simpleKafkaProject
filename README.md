@@ -32,5 +32,5 @@ docker run --network=kafkanet --name=produttore1 produttore-img
 
 docker build -t consumatore-img .
 
-docker run --network=kafkanet --name=produttore1 consumatore-img
+docker run --network=kafkanet --name=consumatore1 consumatore-img
 
