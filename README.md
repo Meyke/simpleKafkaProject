@@ -12,11 +12,18 @@ gradle build
 gradle fatjar
 
 
+## SERVER ZOOKEEPER:
+
+docker build -t zookeeper-img .
+
+docker network create -d bridge kafkanet
+
+docker run --network=kafkanet --name=zookeeper1 zookeeper-img
+
+
 ## SERVER KAFKA:
 
 docker build -t kafka-img .
-
-docker network create -d bridge kafkanet
 
 docker run --network=kafkanet --name=kafka1 kafka-img
 
