@@ -1,16 +1,24 @@
-# simpleKafkaProject (ver. base)
+# simpleKafkaProject (multiple-producers-consumers)
                     
-Produttore ------- |Kafka| ---------- Consumatore
-
 Ogni elemento gira su un proprio contenitore
 
 
 BUILD (da automatizzare):
 
+fare prima la build del produttore e del consumatore come segue:
+
 gradle build 
 
 gradle fatjar
 
+gradle copyLibJarFiles (copia i jar delle librerie dentro la cartella libraries per
+la build del filtro)
+
+fare la build del fitro come segue:
+
+gradle build 
+
+gradle fatjar
 
 ## SERVER ZOOKEEPER:
 
