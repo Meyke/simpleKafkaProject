@@ -5,7 +5,7 @@ Produttore ------- |Kafka| ---------- Consumatore
 Ogni elemento gira su un proprio contenitore
 
 
-BUILD (da automatizzare):
+## BUILD (da automatizzare):
 
 gradle build 
 
