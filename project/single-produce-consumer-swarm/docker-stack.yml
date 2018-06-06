@@ -7,16 +7,31 @@ services:
     deploy:
       placement:
         constraints: [node.role == manager]
+    networks:
+      - kafkanet
 
   produttore:
     image: my-registry:5000/produttore-img
     deploy:
+      mode: replicated
       replicas: 1
+      placement:
+        constraints: [node.role == worker]
+    networks:
+      - kafkanet
 
   consumatore:
     image: my-registry:5000/consumatore-img
     deploy:
+      mode: replicated
       replicas: 1
+      placement:
+        constraints: [node.role == worker]
+    networks:
+      - kafkanet
+networks:
+    kafkanet:
+
 
 
 
