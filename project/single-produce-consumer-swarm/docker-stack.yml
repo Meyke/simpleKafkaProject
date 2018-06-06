@@ -1,0 +1,22 @@
+version: '3'
+services:
+  kafka:
+    image: my-registry:5000/kafka-img
+    ports: 
+      - "9092:9092"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+
+  produttore:
+    image: my-registry:5000/produttore-img
+    deploy:
+      replicas: 1
+
+  consumatore:
+    image: my-registry:5000/consumatore-img
+    deploy:
+      replicas: 1
+
+
+
