@@ -17,7 +17,7 @@ public class Consumatore {
 	public Consumatore(String topic, String group){
 		
 		Properties props = new Properties();
-	        props.put("bootstrap.servers", "localhost:9092");
+	        props.put("bootstrap.servers", "kafka1:9092");
 	        props.put("group.id", group);
 	        
 	        //using auto commit

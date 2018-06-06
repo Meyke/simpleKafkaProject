@@ -21,7 +21,7 @@ public class Produttore {
 	public Produttore(String topic){
 		
 		this.props = new Properties();
-	    this.props.put("bootstrap.servers", "localhost:9092");
+	    this.props.put("bootstrap.servers", "kafka1:9092");
 	    this.props.put("key.serializer", "org.apache.kafka.common.serialization.IntegerSerializer");
 	    this.props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 		this.producer = new KafkaProducer<Integer, String>(props);
