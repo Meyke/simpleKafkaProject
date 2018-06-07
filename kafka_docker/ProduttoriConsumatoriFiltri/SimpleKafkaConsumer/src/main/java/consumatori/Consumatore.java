@@ -38,7 +38,6 @@ public class Consumatore {
 	
 	public List<String> receiveMessages(){
 			List<String> messages = new ArrayList<>();
-			messages.clear();
 			//infinite poll loop
 	       ConsumerRecords<String, String> records = consumer.poll(100);
 	       for (ConsumerRecord<String, String> record : records){

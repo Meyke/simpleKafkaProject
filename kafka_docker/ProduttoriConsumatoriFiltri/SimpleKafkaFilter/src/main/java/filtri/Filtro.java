@@ -29,9 +29,19 @@ public class Filtro {
 	
 	
 	public void filterMessages(){
-	    //infinite poll loop
 		while(true){
-			this.produttore.sendMessages(this.consumatore.receiveMessages());
+
+		List<String> messages = this.consumatore.receiveMessages();
+		this.processMessage(messages);
+	    //infinite poll loop
+			this.produttore.sendMessages(messages);
+		}
+	}
+	
+	
+	public void processMessage(List<String> messages){
+		for(String message : messages){
+			message.concat(" Filtered");
 		}
 	}
 }
