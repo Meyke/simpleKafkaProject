@@ -2,3 +2,4 @@
 .gradle
 .classpath
 /bin/
+/kafka_docker/ProduttoriConsumatoriFiltri/**/build
