@@ -8,7 +8,8 @@ RUN chmod 777 /scripts/kafka-configuration.sh
 # install java + others
 RUN apt-get update && apt-get install -y \
 	wget \
-	openjdk-8-jdk
+	openjdk-8-jdk \
+	telnet
 
 # install kafka
 RUN wget http://it.apache.contactlab.it/kafka/1.1.0/kafka_2.11-1.1.0.tgz  && \
@@ -17,4 +18,5 @@ RUN wget http://it.apache.contactlab.it/kafka/1.1.0/kafka_2.11-1.1.0.tgz  && \
 
 
 EXPOSE 9092
-CMD ["/scripts/kafka-configuration.sh"]
+ADD wait-for-kafka.sh wait-for-kafka.sh
+CMD ["./wait-for-kafka.sh","/scripts/kafka-configuration.sh"]
