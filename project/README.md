@@ -20,7 +20,8 @@ vagrant up
 
 
 # Connessione alla macchina virtuale dev:
-```vagrant ssh swarm-1 
+```
+vagrant ssh swarm-1 
 ```
 
 
