@@ -15,11 +15,14 @@ Gli indirizzi delle macchine virtuali sono assegnati staticamente all'interno de
 
 Lanciare l'ambiente vagrant:
 ```cd ambienti/ambiente_swarm
-vagrant up```
+vagrant up
+```
 
 
 # Connessione alla macchina virtuale dev:
-```vagrant ssh swarm-1 ```
+```vagrant ssh swarm-1 
+```
+
 
 # BUILD (progetti java e immagini docker)
 Nella cartella projects
@@ -27,12 +30,14 @@ Lo script build-all-projects.sh gestisce la build dei progetti
 lo script build-all-images.sh gestisce la creazione delle immagini di contenitori docker
 ```cd projects
 ./build-all-projects.sh
-./build-all-images.sh```
+./build-all-images.sh
+```
 
 # ESECUZIONE
 Dopo aver eseguito la build è possibile lanciare i contenitori:
 ```cd projects
-./start-sentence-stack.sh```
+./start-sentence-stack.sh
+```
 
 
 
