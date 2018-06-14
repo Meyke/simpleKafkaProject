@@ -10,16 +10,28 @@
 apply plugin: 'java'
 
 apply plugin: 'application'     
-mainClassName = "produttori.Produttore"
+mainClassName = "filtri.Main"
 applicationDefaultJvmArgs = ["-Djava.util.logging.config.file=dist/logging.properties"]
 
 // In this section you declare where to find the dependencies of your project
 repositories {
+    flatDir { 
+           dirs "../libraries"
+        }
     mavenCentral()
 }
 
+configurations {
+        libs
+    }
+
 dependencies {
-    // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+compile 'SimpleKafkaProducer:SimpleKafkaProducer-all'
+        compile 'SimpleKafkaConsumer:SimpleKafkaConsumer-all'
+        
+        libs 'SimpleKafkaProducer:SimpleKafkaProducer-all'
+        libs 'SimpleKafkaConsumer:SimpleKafkaConsumer-all'
+           // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
     compile group: 'org.apache.kafka', name: 'kafka-clients', version: '1.1.0'
     runtime group: 'org.apache.kafka', name: 'kafka-clients', version: '1.1.0'
     archives group: 'org.apache.kafka', name: 'kafka-clients', version: '1.1.0'
@@ -31,6 +43,7 @@ dependencies {
 jar {
     manifest {
         attributes 'Main-Class': mainClassName
+        attributes 'Class-Path': 'SimpleKafkaConsumer-all.jar SimpleKafkaProducer-all.jar' 
     }
 }
 
