@@ -10,7 +10,7 @@
 apply plugin: 'java'
 
 apply plugin: 'application'     
-mainClassName = "produttori.Produttore"
+mainClassName = "produttori.Main"
 applicationDefaultJvmArgs = ["-Djava.util.logging.config.file=dist/logging.properties"]
 
 // In this section you declare where to find the dependencies of your project
@@ -53,6 +53,12 @@ task copyFiles(type: Copy) {
 task deleteDist(type: Delete) {
     delete 'libs'
 }
+
+task copyLibJarFiles(type: Copy) {
+    from libsDir  
+    into '../libraries'
+}
+
 
 
 

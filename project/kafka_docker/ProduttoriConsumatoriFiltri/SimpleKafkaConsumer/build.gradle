@@ -50,9 +50,11 @@ task copyFiles(type: Copy) {
     include '**/*.jar'
 }
 
+task copyLibJarFiles(type: Copy) {
+    from libsDir  
+    into '../libraries'
+}
+
 task deleteDist(type: Delete) {
     delete 'libs'
 }
-
-
-
