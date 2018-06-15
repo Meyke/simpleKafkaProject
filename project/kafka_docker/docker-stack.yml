@@ -17,8 +17,6 @@ services:
     deploy:
       placement:
         constraints: [node.role == manager]
-    depends_on:
-      - "zookeeper"
     networks:
       - kafkanet
 
@@ -27,10 +25,8 @@ services:
     deploy:
       placement:
         constraints: [node.role == manager]
-      #restart_policy:
-       # condition: none
-    depends_on:
-      - "kafka"
+      restart_policy:
+        condition: none
     networks:
       - kafkanet
 
@@ -41,8 +37,8 @@ services:
       replicas: 1
       placement:
         constraints: [node.role == worker]
-    depends_on:
-      - "kafka"
+      restart_policy:
+        condition: none
     networks:
       - kafkanet
 
@@ -53,9 +49,9 @@ services:
       replicas: 2
       placement:
         constraints: [node.role == worker]
-    command: ["java", "-jar", "SimpleConsumer.jar", "topic1", "triciclo"]
-    depends_on:
-      - "kafka"
+      restart_policy:
+        condition: none
+    command: ["./wait-for-kafka.sh","java", "-jar", "SimpleConsumer.jar", "topic1", "triciclo"]
     networks:
       - kafkanet
 
@@ -66,9 +62,9 @@ services:
       replicas: 1
       placement:
         constraints: [node.role == worker]
-    command: ["java","-jar","SimpleConsumer.jar", "topic1", "palloncino"]
-    depends_on:
-      - "kafka"
+      restart_policy:
+        condition: none
+    command: ["./wait-for-kafka.sh","java","-jar","SimpleConsumer.jar", "topic2", "palloncino"]
     networks:
       - kafkanet
 networks:
