@@ -1,0 +1,91 @@
+version: '3'
+services:
+  zookeeper:
+    image: my-registry:5000/zookeeper-img
+    ports: 
+      - "2181:2181"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    networks:
+      - kafkanet
+
+  kafka:
+    image: my-registry:5000/kafka-img
+    ports: 
+      - "9092:9092"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    depends_on:
+      - "zookeeper"
+    networks:
+      - kafkanet
+
+  topic:
+    image: my-registry:5000/topic-img
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+      restart_policy:
+        condition: none
+    networks:
+      - kafkanet
+
+  produttore:
+    image: my-registry:5000/produttore-img
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [node.role == worker]
+    command: ["java", "-jar", "SimpleProducer.jar", "topic1"]
+    depends_on:
+      - "kafka"
+    networks:
+      - kafkanet
+
+  consumatoriTriciclo:
+    image: my-registry:5000/consumatore-img
+    deploy:
+      mode: replicated
+      replicas: 2
+      placement:
+        constraints: [node.role == worker]
+    command: ["java", "-jar", "SimpleConsumer.jar", "topic2", "triciclo"]
+    depends_on:
+      - "kafka"
+    networks:
+      - kafkanet
+
+  consumatoriPalloncino:
+    image: my-registry:5000/consumatore-img
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [node.role == worker]
+    command: ["java","-jar","SimpleConsumer.jar", "topic1", "palloncino"]
+    depends_on:
+      - "kafka"
+    networks:
+      - kafkanet
+
+  filtro:
+    image: my-registry:5000/filtro-img
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [node.role == worker]
+    command: ["java","-jar","SimpleFilter.jar", "topic1", "topic2","bicicletta"]
+    depends_on:
+      - "kafka"
+    networks:
+      - kafkanet
+networks:
+    kafkanet:
+
+
+
+

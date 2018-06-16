@@ -1,0 +1,11 @@
+.gradle
+/build/
+/libs/
+/libraries/
+!gradle/wrapper/gradle-wrapper.jar
+
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
