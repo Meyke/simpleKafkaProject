@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
     config.vm.box = "bento/ubuntu-16.04" 
 
     # folder per i progetti Asw (/home/asw/projects)
-    config.vm.synced_folder "../../project/kafka_docker/", "/home/asw/projects", :mount_options => ["dmode=777", "fmode=777"]
+    config.vm.synced_folder "../../project/multi_producer_consumer/", "/home/asw/projects", :mount_options => ["dmode=777", "fmode=777"]
 
     # folder per le risorse condivise per gli ambienti Asw (/home/asw/_shared/resources e /home/asw/_shared/scripts) 
     config.vm.synced_folder "../_shared/", "/home/asw/_shared", :mount_options => ["dmode=777", "fmode=777"]
