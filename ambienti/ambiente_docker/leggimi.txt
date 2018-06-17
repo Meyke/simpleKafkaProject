@@ -1,1 +1,0 @@
-qui deve andare il singolo ambiente docker. Per avviare il progetto single-producer-single-consumer

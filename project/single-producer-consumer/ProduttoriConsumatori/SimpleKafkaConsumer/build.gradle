@@ -10,7 +10,7 @@
 apply plugin: 'java'
 
 apply plugin: 'application'     
-mainClassName = "consumatori.Consumatore"
+mainClassName = "consumatori.Main"
 applicationDefaultJvmArgs = ["-Djava.util.logging.config.file=dist/logging.properties"]
 
 // In this section you declare where to find the dependencies of your project
@@ -44,5 +44,12 @@ task fatJar(type: Jar) {
     with jar
 }
 
+task copyFiles(type: Copy) {
+    from "build/libs"
+    into "libs"
+    include '**/*.jar'
+}
 
-
+task deleteDist(type: Delete) {
+    delete 'libs'
+}
