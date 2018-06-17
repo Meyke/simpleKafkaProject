@@ -3,24 +3,11 @@
 Benvenuti al repository del progetto 
 di Architettura dei Sistemi Software.
 
-## Membri del Team:
-
-Michele Tedesco
-
-Daniele Caldarini
-
-Lorenzo Vaccaro
-
-Luca
-
-Danilo
-
-
 
 Questo repository contiene il codice del progetto
 del corso di Architettura dei Sistemi Software
 relativo a delle semplici applicazioni distribuite basate sulla comunicazione asincrona
-e sull'uso di Apache Kafka(http://www.oracle.com/technetwork/java/index.html), 
+e sull'uso di Apache Kafka(https://kafka.apache.org/), 
 che vanno eseguite in degli opportuni ambienti distribuiti su cui è presente Apache Kafka: 
 * il software è normalmente scritto in [Java](http://www.oracle.com/technetwork/java/index.html), 
   e costruito con [Gradle](http://gradle.org/); 
@@ -32,6 +19,18 @@ che vanno eseguite in degli opportuni ambienti distribuiti su cui è presente Ap
 * inoltre, gli ambienti di esecuzione  
   sono basati su contenitori 
   [Docker](https://www.docker.com/). 
+
+## Membri del Team:
+
+Michele Tedesco
+
+Daniele Caldarini
+
+Lorenzo Vaccaro
+
+Luca
+
+Danilo
 
 ## Software da installare sul proprio PC 
 
@@ -54,12 +53,9 @@ poiché può essere eseguito nelle macchine virtuali.
 
 Questo repository è organizzato in diverse sezioni (cartelle): 
 * [project](project/) contiene il codice delle *applicazioni distribuite*, 
-  con una sottosezione (sottocartella) per ciascuno degli argomenti del corso; 
+  con una sottosezione (sottocartella) per ciascuno dei progetti;
 * [ambienti](ambienti/) contiene il codice per la gestione degli *ambienti distribuiti*, 
   con una sottosezione (sottocartella) per ciascuno degli ambienti distribuiti 
   su cui poter eseguire le applicazioni distribuite sviluppate.
-
-Attualmente non sono presenti tutti i progetti e nemmeno tutti gli ambienti. 
-Verranno aggiunti a questo repository durante lo svolgimento del corso.
 
 

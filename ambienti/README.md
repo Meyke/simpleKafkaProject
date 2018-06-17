@@ -9,7 +9,7 @@ definiti nella cartella [project/](../project/) del repository.
 Per usare delle versioni più recenti del software di sviluppo 
 (come *JDK* e *Gradle*) 
 è necessario modificare le prime righe dei relativi script di installazione 
-(ad esempio, **asw/environments/shared/scripts/setup-java.sh** per *JDK*), 
+(ad esempio, **/ambienti/shared/scripts/setup-java.sh** per *JDK*), 
 indicando il numero della versione da utilizzare. 
 
 ## Utilizzo degli ambienti di esecuzione 
@@ -27,7 +27,7 @@ Per gestire un ambiente bisogna:
 
 1. usare una shell (per esempio, Git) del proprio PC 
 
-2. posizionarsi nella cartella dell'ambiente di interesse (ad esempio, **asw/environments/developer**)
+2. posizionarsi nella cartella dell'ambiente di interesse (ad esempio, **/ambienti/ambiente_docker**)
 
 3. per avviare o creare l'ambiente di esecuzione, usare il comando `vagrant up` 
 
@@ -41,10 +41,10 @@ E' anche possibile:
 
 ## Ambienti 
   
-* [docker](docker/): 
+* [docker](ambiente_docker/): 
   per la gestione e l'esecuzione di contenitori *Docker*  
 
-* [docker-swarm](docker-swarm/): 
+* [docker-swarm](ambiente_swarm/): 
   per la gestione e l'esecuzione di un cluster (*swarm*) di nodi *Docker*  
 
 <!---
