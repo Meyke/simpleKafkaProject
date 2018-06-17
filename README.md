@@ -9,7 +9,7 @@ bla bla
 
 ## Membri del Team:
 
-Michele
+Michele Tedesco
 
 Daniele
 
