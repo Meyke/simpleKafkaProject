@@ -28,9 +28,9 @@ Daniele Caldarini
 
 Lorenzo Vaccaro
 
-Luca
+Luca Lomasto
 
-Danilo
+Danilo Ponti
 
 ## Software da installare sul proprio PC 
 
