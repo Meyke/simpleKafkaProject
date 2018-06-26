@@ -2,13 +2,13 @@
 
 
 
-                                         --  Consumer PALLONCINO
+                                         --  Consumer TRICICLO
                                      /--/
-       Producer -----> |-- topic1 --|                                        -- Consumer TRICICLO(partizione1)
+       Producer -----> |-- topic1 --|                                        -- Consumer BICICLETTA(partizione1)
                                      \--\                                /--/
                                          --   Filter PHI    -- topic2 --|
                                                                          \--\
-                                                                             -- Consumer TRICICLO(partizione2)
+                                                                             -- Consumer BICICLETTA(partizione2)
   
 
 
@@ -52,5 +52,18 @@ Dopo aver eseguito la build è possibile lanciare i contenitori:
 ./start-kafka-stack.sh
 ```
 
-
+# LOG
+Connessione alla macchina virtuale swarm-1:
+```
+vagrant ssh swarm-1
+```
+Esecuzione di uno script che salva nella cartella [logs](./logs) i log del filtro
+e dei consumatori:
+```
+./get-all-logs.sh
+```
+In alternativa per esplorare i log di ogni singolo servizio dopo essersi
+connesso alla macchina swarm-1 esegui il seguente comando:
+```
+docker service logs "nome_del_contenitore"
 

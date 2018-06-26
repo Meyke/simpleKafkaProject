@@ -45,27 +45,27 @@ services:
     networks:
       - kafkanet
 
-  consumatoriTriciclo:
+  consumatoriBicicletta:
     image: my-registry:5000/consumatore-img
     deploy:
       mode: replicated
       replicas: 2
       placement:
         constraints: [node.role == worker]
-    command: ["java", "-jar", "SimpleConsumer.jar", "topic2", "triciclo"]
+    command: ["java", "-jar", "SimpleConsumer.jar", "topic2", "bicicletta"]
     depends_on:
       - "kafka"
     networks:
       - kafkanet
 
-  consumatoriPalloncino:
+  consumatoriTriciclo:
     image: my-registry:5000/consumatore-img
     deploy:
       mode: replicated
       replicas: 1
       placement:
         constraints: [node.role == worker]
-    command: ["java","-jar","SimpleConsumer.jar", "topic1", "palloncino"]
+    command: ["java","-jar","SimpleConsumer.jar", "topic1", "triciclo"]
     depends_on:
       - "kafka"
     networks:
@@ -78,7 +78,7 @@ services:
       replicas: 1
       placement:
         constraints: [node.role == worker]
-    command: ["java","-jar","SimpleFilter.jar", "topic1", "topic2","bicicletta"]
+    command: ["java","-jar","SimpleFilter.jar", "topic1", "topic2","motociclo"]
     depends_on:
       - "kafka"
     networks:
