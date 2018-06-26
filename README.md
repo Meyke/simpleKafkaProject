@@ -3,7 +3,7 @@
 Benvenuti al repository del progetto 
 di Architettura dei Sistemi Software.
 
-È presente un [report](reportProgettoASW.pdf) di descrizione del progetto.
+È presente un [report](ReportProgettoASW.pdf) di descrizione del progetto.
 
 Questo repository contiene il codice del progetto
 del corso di Architettura dei Sistemi Software
